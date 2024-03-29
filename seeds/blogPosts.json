@@ -1,0 +1,12 @@
+[
+{
+    "title": "Test Post",
+    "content": "Test content with words and stuff and here is my blog post",
+    "user_id": 1
+},
+{
+    "title": "Test Post 2",
+    "content": "More test content",
+    "user_ide": 2
+}
+]
