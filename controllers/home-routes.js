@@ -21,6 +21,10 @@ router.get('/', async (req, res) =>{
     }
 });
 
+router.get('/login', (req, res) => {
+        res.render('login');
+});
+
 // TO DO: Add get routes for single blog posts, require log-in
 
 // TO DO: Add post routes for blog posts, require log-in
