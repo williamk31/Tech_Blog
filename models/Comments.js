@@ -41,3 +41,5 @@ Comments.init(
         modelName: 'comment',
     }
 );
+
+module.exports = Comments

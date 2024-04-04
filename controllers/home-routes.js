@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const { Blog, User } = require('../models');
-const withAuth = require('../utils/auth');
+const { Blog, User, Comments } = require('../models');
 
 router.get('/', async (req, res) =>{
     try{
@@ -21,16 +20,34 @@ router.get('/', async (req, res) =>{
     }
 });
 
+router.get('/blogpost/:id', async (req, res) => {
+    try {
+        const blogData = await Blog.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User, 
+                    attributes: ['name'],
+                },
+                {
+                    model: Comments,
+                    attributes: ['content'],
+                }
+            ],
+        });
+        const blogPost = blogData.get({ plain: true });
+
+        res.render('blog-post', {
+            ...blogPost,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 router.get('/login', (req, res) => {
         res.render('login');
 });
-
-// TO DO: Add get routes for single blog posts, require log-in
-
-// TO DO: Add post routes for blog posts, require log-in
-
-//TO DO: Add put routes for blog posts, require log-in
-
-//TO DO: add delete routes for blog posts, require log-in
 
 module.exports = router;

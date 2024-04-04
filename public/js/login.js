@@ -13,7 +13,7 @@ async function loginForm(){
         headers: {'Content-Type':'application/json'}
     })
     console.log(response);
-    if (response.ok === true){
+    if (response.ok){
         document.location.replace('/')
         // replace "login" link with "logout" link on homepage
     } else {
