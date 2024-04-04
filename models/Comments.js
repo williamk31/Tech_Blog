@@ -6,13 +6,13 @@ class Comments extends Model {}
 Comments.init(
     {
         id: {
-            type: DataTypes.Types.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
         },
         title: {
-            type: DataTypes.Types.STRING,
+            type: DataTypes.STRING,
             alluwNull: false,
         },
         content: {

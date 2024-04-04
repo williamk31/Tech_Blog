@@ -5,15 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog</title>
+  <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
     <ul>
-        <li>Home</li>
-        <li>Dashboard</li>
-        <li><a href='/login'>Login</a></li>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/dashboard'>Dashboard</a></li>
+        <li>
+            {{#if logged_in}}
+            <a href='/'>Logout</a> |
+            <button class="no-button" id="logout">logout</button>
+            {{else}}
+            <a href='/login'>Login</a>
+            {{/if}}
+        </li>
     </ul>
     <h1>
       The Tech Blog
@@ -25,6 +33,9 @@
   <footer>
       
   </footer>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
