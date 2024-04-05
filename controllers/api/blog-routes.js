@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { User, Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// TO DO: Add post routes for blog posts, require log-in
 router.post('/', withAuth, async (req, res) => {
     try{
         const newBlogPost = await Blog.create({
@@ -17,10 +16,6 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-
-//TO DO: Add put routes for blog posts, require log-in
-
-//TO DO: add delete routes for blog posts, require log-in
 router.delete('/:id', withAuth, async (req,res) => {
     try{
         const blogPost = await Blog.destroy({

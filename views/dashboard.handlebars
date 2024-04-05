@@ -1,0 +1,31 @@
+{{#each blogPosts as |blogPost|}}
+{{> blog-data}}
+{{/each}}
+
+<div class="row mt-4" id="new-post-form" style="display: none;">
+  <div class="col-md-6">
+    <h3>Add a Post:</h3>
+
+    <form class="form post-form">
+      <div class="form-group">
+        <label for="comment-title">title:</label>
+        <input class="form-input" type="text" id="post-title" name="post-title" />
+      </div>
+      <div class="form-group">
+        <label for="comment">comment:</label>
+        <textarea class="form-input" id="post-content" name="post-content"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" id="post-submit">Add Post</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row align-center mb-5">
+    <div class="col-md-6">
+        <button class="btn btn-primary" id="add-post">+ Add a New Post</button>
+    </div>
+</div>
+
+<script src="/js/new-post.js"></script>
