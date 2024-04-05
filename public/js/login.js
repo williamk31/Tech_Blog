@@ -2,7 +2,8 @@ const loginBtn = document.querySelector('.login-form')
 const signupBtn = document.querySelector('.signup-form')
 
 
-async function loginForm(){
+async function loginForm(event) {
+    event.preventDefault();
     const userEmail = document.querySelector('#email-login').value.trim();
     console.log(userEmail);
     const userPassword = document.querySelector('#password-login').value.trim();
@@ -20,7 +21,8 @@ async function loginForm(){
     }
 };
 
-async function signupForm () {
+async function signupForm(event) {
+    event.preventDefault();
     const name = document.querySelector('#name-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();

@@ -13,7 +13,7 @@ router.get('/', async (req, res) =>{
         });
         const blogPosts = dbBlogData.map((blogPost) =>
         blogPost.get({ plain: true }));
-        res.render('homepage', {blogPosts});
+        res.render('homepage', {blogPosts, logged_in: req.session.logged_in});
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -30,7 +30,7 @@ router.get('/blogpost/:id', async (req, res) => {
                 },
                 {
                     model: Comments,
-                    attributes: ['content'],
+                    attributes: ['content', 'user_id'],
                 }
             ],
         });

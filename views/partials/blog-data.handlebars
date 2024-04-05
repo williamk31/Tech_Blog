@@ -1,6 +1,9 @@
 <div class="row align-center mb-5">
   <div class="col-md-6">
-    <h2>{{title}}</h2>
+    <h2>
+      <a href="/blogpost/{{id}}">{{title}}</a>
+      </h2>
     <p>{{content}}</p>
+    <p>Created by {{blogPost.user.name}}</p>
   </div>
 </div>

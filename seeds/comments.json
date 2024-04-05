@@ -1,0 +1,14 @@
+[
+    {
+        "title": "comment1",
+        "content": "this is a comment",
+        "user_id": 1,
+        "blog_id": 1
+    },
+    {
+        "title": "comment2",
+        "content": "another comment",
+        "user_id": 2,
+        "blog_id": 2
+    }
+    ]
